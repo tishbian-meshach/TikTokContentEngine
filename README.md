@@ -79,7 +79,7 @@ An automated content creation engine that transforms written content into viral 
 
 To add a video to this README, use the following markdown:
 ```markdown
-[![Setup Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/embed/n9RQCjagZoU?si=C3rAIbe1G6H1tWw_)
+[![Setup Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=n9RQCjagZoU)
 ```
 
 ## Configuration
