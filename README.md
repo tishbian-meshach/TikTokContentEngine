@@ -76,9 +76,9 @@ An automated content creation engine that transforms written content into viral 
 ## Setup Video
 
 
-```markdown
+
 [![YouTube](http://i.ytimg.com/vi/n9RQCjagZoU/hqdefault.jpg)](https://www.youtube.com/watch?v=n9RQCjagZoU)
-```
+
 
 ## Configuration
 
