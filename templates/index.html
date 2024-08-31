@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Content Engine</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        #progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+        }
+        #progress {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        #download-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>TikTok Content Engine</h1>
+
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="document" accept=".txt,.pdf,.docx">
+        <button type="submit">Generate Video</button>
+    </form>
+
+    <div id="progress-bar">
+        <div id="progress">0%</div>
+    </div>
+
+    <div id="message"></div>
+
+    <a id="download-button" href="/download" download>Download Video</a>
+
+    <script>
+        const socket = io();
+        const form = document.getElementById('upload-form');
+        const progressBar = document.getElementById('progress');
+        const messageDiv = document.getElementById('message');
+        const downloadButton = document.getElementById('download-button');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch('/generate', {
+                method: 'POST',
+                body: formData
+            });
+        });
+
+        socket.on('progress', (data) => {
+            progressBar.style.width = data.percentage + '%';
+            progressBar.textContent = data.percentage + '%';
+        });
+
+        socket.on('message', (data) => {
+            messageDiv.textContent = data.text;
+        });
+
+        socket.on('complete', (data) => {
+            messageDiv.textContent = data.message;
+            downloadButton.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
