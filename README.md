@@ -21,7 +21,7 @@ An automated content creation engine that transforms written content into viral 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/TikTokContentEngine.git
+   git clone https://github.com/tishbian-meshach/TikTokContentEngine.git
    cd TikTokContentEngine
    ```
 
