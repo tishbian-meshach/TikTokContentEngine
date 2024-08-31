@@ -75,11 +75,9 @@ An automated content creation engine that transforms written content into viral 
 
 ## Setup Video
 
-[Placeholder for setup video]
 
-To add a video to this README, use the following markdown:
 ```markdown
-[![Setup Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=n9RQCjagZoU)
+[![YouTube](http://i.ytimg.com/vi/n9RQCjagZoU/hqdefault.jpg)](https://www.youtube.com/watch?v=n9RQCjagZoU)
 ```
 
 ## Configuration
