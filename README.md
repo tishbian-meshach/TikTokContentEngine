@@ -36,22 +36,28 @@ An automated content creation engine that transforms written content into viral 
    pip install -r requirements.txt
    ```
 
-4. Download and set up the Vosk model:
+4. Download and set up FFmpeg:
+   - Download [FFmpeg](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z)
+   - Extract the contents to `C:\ffmpeg`
+   - Add `C:\ffmpeg\bin` to your system's PATH environment variable
+
+5. Download and set up the Vosk model:
    - Download the [vosk-model-small-en-us-0.15](https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip) model
    - Extract the contents and copy the `model` folder to the project root directory
 
-5. Install ImageMagick:
+6. Install ImageMagick:
    - Download [ImageMagick-7.1.1-Q16-HDRI](https://imagemagick.org/archive/binaries/ImageMagick-7.1.1-37-Q16-HDRI-x64-dll.exe)
    - Run the installer and ensure it's installed in the `C:\Program Files` directory
+   - Add `C:\Program Files\ImageMagick-7.1.1-Q16-HDRI` to your system's PATH environment variable
 
-6. Set up your Hugging Face API key:
-   - Create a `.env` file in the project root directory
-   - Add your Hugging Face API key: `HUGGINGFACE_API_KEY=your_api_key_here`
+7. Set up your Hugging Face API key:
+   - Open `content_generator.py`
+   - Replace 'HUGGINGFACE_API_KEY' with your actual Hugging Face API key
 
-7. Create necessary folders:
+8. Create necessary folders:
    - Create `output/`, `uploads/`, and `videos/background/` folders in the project root
 
-8. Update MoviePy configuration:
+9. Update MoviePy configuration:
    - Replace the MoviePy config.py file with the one provided in the `config/` folder
 
 ## Usage
@@ -87,9 +93,9 @@ Replace `VIDEO_ID` with your YouTube video ID.
 
 If you encounter any issues, please check the following:
 - Ensure FFmpeg is installed and accessible in your system PATH
-- Verify that ImageMagick is correctly installed in `C:\Program Files`
+- Verify that ImageMagick is correctly installed and added to your system PATH
 - Check that the Vosk model is correctly placed in the project root directory
-- Confirm that your Hugging Face API key is correctly set in the `content_generator.py` file
+- Confirm that your Hugging Face API key is correctly set in `content_generator.py`
 
 ## Support
 
