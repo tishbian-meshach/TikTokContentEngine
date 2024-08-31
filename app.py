@@ -1,10 +1,8 @@
-from dotenv import load_dotenv
 from flask import Flask, render_template, request, send_file
 from flask_socketio import SocketIO
 import os
 from main import main
 import threading
-load_dotenv()
 
 app = Flask(__name__)
 socketio = SocketIO(app)
